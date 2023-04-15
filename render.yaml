@@ -10,7 +10,7 @@ services:
     buildCommand: "./build.sh"
     startCommand: "gunicorn expenseswebsite.wsgi:application"
     envVars:
-      - key: DATABASE_URL
+      - key: django.db.backends.postgresql
         fromDatabase:
           name: mysite
           property: connectionString
