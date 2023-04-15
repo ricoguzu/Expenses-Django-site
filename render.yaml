@@ -1,0 +1,20 @@
+databases:
+  - name: expenseswebsite
+    databaseName: incomeexpensesdb
+    user: postgres
+
+services:
+  - type: web
+    name: expenseswebsite
+    env: python
+    buildCommand: "./build.sh"
+    startCommand: "gunicorn expenseswebsite.wsgi:application"
+    envVars:
+      - key: DATABASE_URL
+        fromDatabase:
+          name: mysite
+          property: connectionString
+      - key: 'django-insecure-!mpy$97y93isj4+3=q#(31zhf&m_#q+l392f7(%jupj37p^t!@'
+        generateValue: true
+      - key: WEB_CONCURRENCY
+        value: 4
