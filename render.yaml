@@ -10,9 +10,9 @@ services:
     buildCommand: "./build.sh"
     startCommand: "gunicorn expenseswebsite.wsgi:application"
     envVars:
-      - key: django.db.backends.postgresql
+      - key: postgres://postgre:8090@localhost:5432/incomeexpensesdb
         fromDatabase:
-          name: mysite
+          name: expenseswebsite
           property: connectionString
       - key: 'django-insecure-!mpy$97y93isj4+3=q#(31zhf&m_#q+l392f7(%jupj37p^t!@'
         generateValue: true
