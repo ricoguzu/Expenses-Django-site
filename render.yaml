@@ -1,7 +1,7 @@
 databases:
   - name: expenseswebsite
     databaseName: incomeexpensesdb
-    user: postgres
+    user: expenseswebsite
 
 services:
   - type: web
